@@ -16,9 +16,9 @@ const config = {
 	kit: {
 		adapter: adapter({ fallback: '404.html' }),
 		paths: {
-			// Served at https://graffu.com/club-vs-country/ via a proxy rewrite on the home site.
+			// Served at https://graffu.com/club-v-country/ via a proxy rewrite on the home site.
 			// BASE_PATH overrides this; set BASE_PATH='' for a root build.
-			base: process.env.BASE_PATH ?? '/club-vs-country',
+			base: process.env.BASE_PATH ?? '/club-v-country',
 			// Emit absolute, base-prefixed asset URLs so they resolve whether or not the
 			// proxied URL has a trailing slash.
 			relative: false
