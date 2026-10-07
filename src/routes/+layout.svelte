@@ -1,7 +1,8 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.png';
-	import { base, resolve } from '$app/paths';
+	import { base } from '$app/paths';
+	import { SITE_URL } from '$lib/constants.js';
 	import { onMount } from 'svelte';
 
 	const tayFlapjackWoff2 = `${base}/fonts/tay-flapjack/TAYFlapjack.woff2`;
@@ -71,7 +72,7 @@
 </svelte:head>
 
 <header class="site-header">
-	<a href={resolve('/')} class="site-name">GRAFFU</a>
+	<a href="{SITE_URL}/" class="site-name">GRAFFU</a>
 	<p class="site-tagline">Visual stories that simply explain data.</p>
 </header>
 

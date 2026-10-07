@@ -1,0 +1,13 @@
+# The home site proxies https://graffu.com/club-vs-country/* to this site with the
+# prefix stripped. The built HTML references /club-vs-country/_app/... etc., so map
+# that prefix back to the root to keep this site's own netlify.app URL working.
+# First match wins: keep these above any other redirects.
+[[redirects]]
+  from = "/club-vs-country"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/club-vs-country/*"
+  to = "/:splat"
+  status = 200
