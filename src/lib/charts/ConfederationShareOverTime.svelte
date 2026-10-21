@@ -146,7 +146,7 @@
 		display: block;
 		font-family: var(--font-display);
 		font-size: 1.1rem;
-		font-weight: 400;
+		font-weight: 700;
 		color: #111;
 		margin-bottom: 0.3rem;
 	}
