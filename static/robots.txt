@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://graffu.com/sitemap.xml
+Sitemap: https://graffu.com/club-v-country/sitemap.xml
