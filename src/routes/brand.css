@@ -1,5 +1,5 @@
 /* ── brand.css ──────────────────────────────────────────────────────────────
-/* ── Webfont declarations are now in +layout.svelte ──────────────────── */
+/* ── Acumin Pro loads through an Adobe Fonts Web Project embed ─────────── */
 
 /* ── Tailwind v4 theme extensions ───────────────────────────────────────── */
 /*  These generate utility classes: font-display, font-serif, text-brand,   */
@@ -7,8 +7,8 @@
 
 @theme {
   /* Typefaces */
-  --font-display: 'TAY Flapjack', serif;
-  --font-serif:   'Source Serif 4', Georgia, serif;
+  --font-display: 'acumin-pro', Arial, sans-serif;
+  --font-serif:   'acumin-pro', Arial, sans-serif;
 
   /* Brand palette */
   --color-brand:          #059657;   /* primary green — nav, CTAs, dividers  */
@@ -46,8 +46,8 @@
 
 :root {
   /* Typefaces */
-  --font-display: 'TAY Flapjack', serif;
-  --font-serif:   'Source Serif 4', Georgia, serif;
+  --font-display: 'acumin-pro', Arial, sans-serif;
+  --font-serif:   'acumin-pro', Arial, sans-serif;
 
   /* Brand palette */
   --color-brand:          #059657;
@@ -77,7 +77,7 @@
   --tracking-brand: -0.02em;
 
   /* Nav — overrides layout.css 52px to match style tile */
-  --nav-height: 80px;
+  --nav-height: 100px;
   --nav-bg:     var(--color-brand);
 
   /* Button shared tokens */
@@ -97,8 +97,7 @@
 /* ── Type styles ─────────────────────────────────────────────────────────── */
 
 /* Hero / page title ——————————————————————————————————————
-   TAY Flapjack at 56px. Used for primary h1, hero headings.
-   Regular weight (400) — the typeface carries the personality. */
+   Acumin Pro at 56px. Used for primary h1, hero headings. */
 .type-display {
   font-family:    var(--font-display);
   font-size:      var(--text-display);
@@ -108,7 +107,7 @@
 }
 
 /* Section heading ————————————————————————————————————————
-   Source Serif 4 at 24px. Used for h2/h3 content headings. */
+   Acumin Pro at 24px. Used for h2/h3 content headings. */
 .type-heading {
   font-family:    var(--font-serif);
   font-size:      var(--text-heading);
@@ -118,7 +117,7 @@
 }
 
 /* Body copy ——————————————————————————————————————————————
-   Source Serif 4 at 16px. Used for paragraphs, descriptions. */
+   Acumin Pro at 16px. Used for paragraphs, descriptions. */
 .type-body {
   font-family:    var(--font-serif);
   font-size:      var(--text-base);
@@ -127,8 +126,8 @@
   letter-spacing: var(--tracking-brand);
 }
 
-/* Attribution / bold serif ———————————————————————————————
-   Source Serif 4 700. Used for bylines, author names. */
+/* Attribution ————————————————————————————————————————————
+   Acumin Pro 700. Used for bylines, author names. */
 .type-attribution {
   font-family: var(--font-serif);
   font-size:   var(--text-base);
@@ -137,7 +136,7 @@
 }
 
 /* Pull quote ——————————————————————————————————————————————
-   TAY Flapjack at 32px. Used for blockquotes, testimonials. */
+   Acumin Pro at 32px. Used for blockquotes, testimonials. */
 .type-quote {
   font-family: var(--font-display);
   font-size:   var(--text-quote);
@@ -146,7 +145,7 @@
 }
 
 /* UI label ———————————————————————————————————————————————
-   TAY Flapjack, uppercase, 16px. Used for buttons, tags, labels. */
+   Acumin Pro, uppercase, 16px. Used for buttons, tags, labels. */
 .type-ui {
   font-family:    var(--font-display);
   font-size:      var(--text-base);
@@ -156,7 +155,7 @@
 }
 
 /* Nav link ———————————————————————————————————————————————
-   TAY Flapjack at 24px. Used for primary navigation items. */
+   Acumin Pro at 24px. Used for primary navigation items. */
 .type-nav {
   font-family:    var(--font-display);
   font-size:      var(--text-heading);

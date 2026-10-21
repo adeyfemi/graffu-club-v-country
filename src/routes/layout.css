@@ -18,7 +18,7 @@ body {
 	font-family: var(--font-serif);
 	line-height: 1.65;
 	margin: 0;
-	padding-top: var(--nav-height);
+	padding-top: 80px;
 }
 
 code, kbd, samp, pre {

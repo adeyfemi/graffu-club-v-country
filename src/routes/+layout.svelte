@@ -1,63 +1,19 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import { base, resolve } from '$app/paths';
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	const tayFlapjackWoff2 = `${base}/fonts/tay-flapjack/TAYFlapjack.woff2`;
 	const tayFlapjackWoff = `${base}/fonts/tay-flapjack/TAYFlapjack.woff`;
-	const sourceSerif400Woff2 = `${base}/fonts/source-serif-4/source-serif-4-latin-400-normal.woff2`;
-	const sourceSerif400Woff = `${base}/fonts/source-serif-4/source-serif-4-latin-400-normal.woff`;
-	const sourceSerif400ItalicWoff2 = `${base}/fonts/source-serif-4/source-serif-4-latin-400-italic.woff2`;
-	const sourceSerif400ItalicWoff = `${base}/fonts/source-serif-4/source-serif-4-latin-400-italic.woff`;
-	const sourceSerif700Woff2 = `${base}/fonts/source-serif-4/source-serif-4-latin-700-normal.woff2`;
-	const sourceSerif700Woff = `${base}/fonts/source-serif-4/source-serif-4-latin-700-normal.woff`;
-	const sourceSerif700ItalicWoff2 = `${base}/fonts/source-serif-4/source-serif-4-latin-700-italic.woff2`;
-	const sourceSerif700ItalicWoff = `${base}/fonts/source-serif-4/source-serif-4-latin-700-italic.woff`;
 
 	onMount(() => {
-		const fontFaces = [
-			new FontFace('TAY Flapjack', `url('${tayFlapjackWoff2}') format('woff2'), url('${tayFlapjackWoff}') format('woff')`, {
-				weight: '400',
-				style: 'normal',
-				display: 'swap'
-			}),
-			new FontFace('Source Serif 4', `url('${sourceSerif400Woff2}') format('woff2'), url('${sourceSerif400Woff}') format('woff')`, {
-				weight: '400',
-				style: 'normal',
-				display: 'swap'
-			}),
-			new FontFace(
-				'Source Serif 4',
-				`url('${sourceSerif400ItalicWoff2}') format('woff2'), url('${sourceSerif400ItalicWoff}') format('woff')`,
-				{
-					weight: '400',
-					style: 'italic',
-					display: 'swap'
-				}
-			),
-			new FontFace('Source Serif 4', `url('${sourceSerif700Woff2}') format('woff2'), url('${sourceSerif700Woff}') format('woff')`, {
-				weight: '700',
-				style: 'normal',
-				display: 'swap'
-			}),
-			new FontFace(
-				'Source Serif 4',
-				`url('${sourceSerif700ItalicWoff2}') format('woff2'), url('${sourceSerif700ItalicWoff}') format('woff')`,
-				{
-					weight: '700',
-					style: 'italic',
-					display: 'swap'
-				}
-			)
-		];
-
-		void Promise.all(
-			fontFaces.map(async (fontFace) => {
-				const loadedFont = await fontFace.load();
-				document.fonts.add(loadedFont);
-			})
-		);
+		const font = new FontFace('TAY Flapjack', `url('${tayFlapjackWoff2}') format('woff2'), url('${tayFlapjackWoff}') format('woff')`, {
+			weight: '400',
+			style: 'normal',
+			display: 'swap'
+		});
+		void font.load().then((loaded) => document.fonts.add(loaded));
 	});
 
 	let { children } = $props();
@@ -65,13 +21,12 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<!-- Preload critical webfonts -->
 	<link rel="preload" as="font" href={tayFlapjackWoff2} type="font/woff2" crossorigin="anonymous" />
-	<link rel="preload" as="font" href={sourceSerif400Woff2} type="font/woff2" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://use.typekit.net/vnb2eck.css" />
 </svelte:head>
 
 <header class="site-header">
-	<a href={resolve('/')} class="site-name">GRAFFU</a>
+	<a href="https://graffu.com/" class="site-name" aria-label="Graffu home">GRAFFU</a>
 	<p class="site-tagline">Visual stories that simply explain data.</p>
 </header>
 
@@ -89,26 +44,31 @@
 		align-items: flex-start;
 		justify-content: center;
 		padding: 0 1.5rem;
-		background: var(--color-cream-50);
-		border-bottom: 1px solid var(--color-cream-50);
+		background: #fefcf8;
+		border-bottom: 1px solid #fefcf8;
 	}
 
 	.site-name {
-		font-family: var(--font-display);
+		font-family: 'TAY Flapjack', serif;
 		font-size: 2.75rem;
 		font-weight: 700;
 		line-height: 0.75;
-		margin-top: 1rem;
-		text-decoration: none;
 		letter-spacing: 0.02em;
+		margin-top: 1rem;
+		color: #000;
+		text-decoration: none;
+		white-space: nowrap;
 	}
-
 	.site-tagline {
-		font-family: var(--font-display);
+		margin: 0.25rem 0 1rem;
+		color: oklch(0.373 0.034 259.733);
+		font-family: 'TAY Flapjack', serif;
 		font-size: 0.875rem;
 		font-weight: 400;
 		line-height: 1.25;
-		margin: 0.25rem 0 1rem;
-		color: var(--color-gray-700);
+	}
+	.site-name:focus-visible { outline: 3px solid #087e59; outline-offset: 4px; }
+	@media (max-width: 760px) {
+		.site-header { padding-inline: 1rem; }
 	}
 </style>
