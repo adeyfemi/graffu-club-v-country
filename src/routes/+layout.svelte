@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.png';
 	import { base } from '$app/paths';
 	import { SITE_URL } from '$lib/constants.js';
 	import { onMount } from 'svelte';
@@ -21,7 +20,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/png" href={`${base}/graffu-g.png`} />
+	<link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
 	<link rel="preload" as="font" href={tayFlapjackWoff2} type="font/woff2" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://use.typekit.net/vnb2eck.css" />
 </svelte:head>
